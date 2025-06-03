@@ -1,5 +1,15 @@
 # LandingNike
 
+Proyecto dedicado a portafolio personal. 
+Es una landing page con productos de Nike inspirado en un diseño de la plataforma de Figma, el diseño es 100% responsive para todos los dispositivo. Utilice Angular v19, HTML y SCSS.
+-------------------------------------------
+## Tecnologías
+- Angular v19
+- HTML5
+- SCSS
+- Git
+- Figma
+--------------------------------------------
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
 
 ## Development server
