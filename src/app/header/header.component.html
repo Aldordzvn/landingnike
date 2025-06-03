@@ -1,0 +1,27 @@
+<header class="desktop">
+    <a href="/"><img [src]="nikeLogo" alt=""></a>
+    <div class="links_container">
+        <a href="https://www.nike.com/mx/hombre" class="linksTxt">HOMBRES</a>
+        <a href="https://www.nike.com/mx/mujer" class="linksTxt">MUJERES</a>
+        <a href="https://www.nike.com/mx/ninos" class="linksTxt">NIÑO/AS</a>
+        <a href="https://www.nike.com/mx/w/rebajas-3yaep" class="linksTxt">OUTLET</a>
+    </div>
+    <div class="icons_container">
+        <a href="https://www.nike.com/mx/member/profile/"><img [src]="userImg" alt="" class="imgClass"></a>
+    </div>
+    <img [src]="hamburguerImg" alt="hamburguerImg" class="hamburguerImg" (click)="toggleHamburguer()">
+</header>
+<div class="menu-burguer" >
+    <div class="menu_items" [class.active]="toggleMenu">
+        <button class="btnBack" (click)="toggleHamburguer()"><img [src]="leftArrowImg" alt="">Salir</button>
+        <a href="https://www.nike.com/mx/hombre" class="linkHamburguer">Hombre</a>
+        <a href="https://www.nike.com/mx/mujer" class="linkHamburguer">Mujer</a>
+        <a href="https://www.nike.com/mx/ninos" class="linkHamburguer">Niños</a>
+        <a href="https://www.nike.com/mx/w/rebajas-3yaep" class="linkHamburguer">Outlet</a>
+        <a href="https://www.nike.com/jp/en/login" class="linkHamburguer">Iniciar Sesión</a>
+        <div class="iconos__hamburguesa">
+            <a href="https://www.linkedin.com/feed/"><img [src]="linkedinImg" alt="hamburguerImg" class="imgIcon"></a>
+            <a href="https://github.com/Aldordzvn"><img [src]="githubImg" alt="hamburguerImg" class="imgIcon"></a>
+        </div>
+    </div>
+</div>

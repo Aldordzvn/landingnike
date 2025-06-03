@@ -1,0 +1,137 @@
+@import '../../styles.scss';
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem clamp(2rem, -20.4rem + 21.875vw, 11.1rem);
+
+    .links_container {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        gap: 5rem;
+
+        .linksTxt {
+            color: $description;
+            font-size: clamp(1.7rem, 1.38vw, 2rem);
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+
+    }
+
+    img {
+        cursor: pointer;
+    }
+
+    .hamburguerImg {
+        display: none;
+    }
+}
+
+.menu-burguer {
+    display: none;
+}
+
+.selected {
+    font-weight: 700;
+    color: $orange;
+}
+
+
+@include tablet {
+    header {
+        .nikeLogo {
+            width: 6rem;
+        }
+    }
+}
+
+@include movilL {
+    header {
+        padding: 1rem;
+
+        .links_container {
+            display: none;
+        }
+
+        .icons_container {
+            display: none;
+        }
+
+        .hamburguerImg {
+            display: block;
+        }
+    }
+
+    .menu-burguer {
+        display: block;
+        position: relative;
+    }
+
+    .menu_items {
+        display: flex;
+        flex-direction: column;
+        background-color: $blanco;
+        position: fixed;
+        z-index: 2;
+        height: 100dvh;
+        width: 100%;
+        top: 0;
+        right: -100%;
+        transition: right 0.4s ease-in-out;
+        border-left: 1px solid $negro;
+
+        &.active{
+            right: 0;
+        }
+        .btnBack {
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid $negro;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            &:hover{
+                background-color: $orange;
+                color: $blanco;
+            }
+        }
+
+        .linkHamburguer {
+
+            font-size: 2rem;
+            text-decoration: none;
+            color: $negro;
+            font-weight: 600;
+            border-bottom: 1px solid $negro;
+            padding: 2rem 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        .iconos__hamburguesa {
+            display: flex;
+            justify-content: space-around;
+            margin-top: auto;
+            margin-bottom: 3rem;
+
+            .imgIcon {
+                width: 5rem;
+            }
+        }
+
+
+    }
+}

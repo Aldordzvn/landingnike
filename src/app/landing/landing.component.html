@@ -1,0 +1,52 @@
+<div class="landing_container">
+    <div class="landing_items">
+        <div class="landing_info_container">
+            <p class="landing_title">{{modeloLanding}}</p>
+            <p class="landing_subtitle">{{nombreLanding}}</p>
+            <p class="landing_description">{{descripcionLanding}}</p>
+            <button class="btnAdd">Add to cart</button>
+            <div class="options_container">
+                <div class="options_items">
+                    @for (item of shoes; track $index) {
+                    <div class="card" (click)="chooseShoes($index)" [class.selected]="selectedShoe === $index">
+                        <img [src]="item.imagen" alt="" class="cardImg">
+                        <div class="cardInfo">
+                            <p class="cardTitle">{{item.modelo}}</p>
+                            <p class="cardModel">{{item.nombre}} </p>
+                        </div>
+                        <div class="bottomCard_container">
+                            <p class="price">{{item.precio | currency:'MXN': 'symbol-narrow': '1.2-2'}} </p>
+                            <button class="btnCart"><img [src]="cartImg" alt="cart"></button>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <div class="carousel_container">
+                    <div class="carousel_items">
+                        <div class="slider">
+                            <div class="card" id="card-1" [class.selectedMobile]="selectedShoe === btnCardActivo" (click)="chooseShoes(btnCardActivo)">
+                                <img [src]="cardImagen" alt="" class="cardImg">
+                                <div class="cardInfo">
+                                    <p class="cardTitle">{{cardModelo}} </p>
+                                    <p class="cardModel">{{cardNombre}}</p>
+                                </div>
+                                <div class="bottomCard_container">
+                                    <p class="price">{{cardPrecio | currency: 'MXN':'symbol-narrow':'1.2-2'}}</p>
+                                    <button class="btnCart"><img [src]="cartImg" alt="cart"></button>
+                                </div>
+                            </div>
+                            <div class="slider-nav">
+                                <button class="btnNextCard" [class.activo]="btnCardActivo === 0" (click)="carrouselMobile(0)"></button>
+                                <button class="btnNextCard" [class.activo]="btnCardActivo === 1" (click)="carrouselMobile(1)"></button>
+                                <button class="btnNextCard" [class.activo]="btnCardActivo === 2" (click)="carrouselMobile(2)"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="landing_model_container">
+            <img [src]="imagenLanding" alt="Model" class="imgModel" [class.selectedImg]="selectedShoeBoolean">
+        </div>
+    </div>
+</div>

@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+@import './inicial.scss';
+@import 'normalize.css';
+// FUENTES
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$poppins: "Poppins", "sans-serif";
+
+// COLORES
+$bgMain: #FFFCF5;
+$blanco: #FFFFFF;
+$negro: #000;
+$titleMain: #1F2733;
+$orange: #D55D3F;
+$description: #333333;
+
+// Variables
+$cuatrok: 2560px;
+$portatilL: 1440px;
+$portatil: 1024px;
+$tablet: 768px;
+$movilL: 425px;
+$movilM: 375px;
+$movilS: 320px;
+
+// Mixins
+@mixin cuatrok{
+    @media(max-width: $cuatrok){
+        @content;
+    }
+}
+
+@mixin portatilL{
+    @media (max-width: $portatilL){
+        @content;
+    }
+}
+
+@mixin portatil{
+    @media (max-width: $portatil){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (max-width: $tablet){
+        @content;
+    }
+}
+
+@mixin movilL{
+    @media (max-width: $movilL){
+        @content;
+    }
+}
+
+@mixin movilM{
+    @media (max-width: $movilM){
+        @content;
+    }
+}
+
+@mixin movilS{
+    @media (max-width: $movilS){
+        @content;
+    }
+}
+
+html{
+    font-family: $poppins;
+}

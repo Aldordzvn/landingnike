@@ -1,0 +1,371 @@
+@import '../../styles.scss';
+
+.landing_items {
+    display: flex;
+    overflow: hidden;
+}
+
+.landing_info_container {
+    height: calc(100vh - 11.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .landing_title {
+        font-size: clamp(6.5rem, 6.25vw, 9rem);
+        margin: 0;
+        font-weight: bold;
+        color: $titleMain;
+    }
+
+    .landing_subtitle {
+        margin: 0;
+        font-weight: 600;
+        font-size: clamp(4rem, 4.16vw, 6rem);
+        color: $orange;
+    }
+
+    .landing_description {
+        font-weight: 500;
+        color: $description;
+        font-size: clamp(1.4rem, 1.18vw, 1.7rem);
+    }
+
+    .btnAdd {
+        background-color: $orange;
+        color: $blanco;
+        font-size: 2.1rem;
+        width: 20rem;
+        height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $blanco;
+            color: $orange;
+            border: 1px solid $orange;
+            font-weight: 500;
+        }
+    }
+
+    .options_container {
+        .options_items {
+            display: flex;
+            gap: 4.3rem;
+            margin-top: 10.7rem;
+        }
+
+        .card {
+            box-shadow: 0px 1px 12px -3px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 0px 1px 12px -3px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0px 1px 12px -3px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            position: relative;
+            width: 14.2rem;
+            height: 10rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 1rem 1rem;
+            cursor: pointer;
+
+
+            &:hover {
+                background-color: rgb(249, 196, 97);
+            }
+
+            .cardImg {
+                width: clamp(9rem, 8.33vw, 12rem);
+                height: auto;
+                position: absolute;
+                transform: rotate(28deg) scaleX(-1);
+                top: -37px;
+            }
+
+            .cardInfo {
+                margin-bottom: 1.7rem;
+
+                .cardTitle {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: $description;
+                    margin: 0;
+                }
+
+                .cardModel {
+                    margin: 0;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    color: $negro;
+                }
+            }
+
+            .bottomCard_container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .price {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    margin: 0;
+                }
+
+                .btnCart {
+                    background-color: $orange;
+                    border: none;
+                    border-radius: 4px;
+                    padding: .8rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $negro;
+                    }
+                }
+            }
+        }
+    }
+
+    .selected {
+        background-color: orange;
+        -webkit-animation-name: slideOutUp;
+        animation-name: slideOutUp;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+}
+
+
+
+.landing_model_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .imgModel {
+        transform: rotate(320deg);
+        height: auto;
+        // object-fit: cover;
+    }
+
+    .selectedImg {
+        -webkit-animation-name: fadeInRight;
+        animation-name: fadeInRight;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+}
+
+.carousel_container {
+    display: none;
+}
+
+
+@keyframes slideOutUp {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(-20%);
+        transform: translateY(-20%);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: rotate(320deg);
+    }
+}
+
+@include cuatrok {
+    .landing_items {
+        padding: 0 clamp(11rem, -57.175rem + 47.344vw, 64.025rem);
+    }
+
+    .landing_model_container {
+        .imgModel {
+            width: clamp(50rem, 24.245rem + 17.873vw, 70rem);
+        }
+    }
+}
+
+@include portatilL {
+    .landing_items {
+        padding: 0 clamp(2rem, -20.154rem + 21.635vw, 11rem);
+    }
+
+    .landing_model_container {
+        .imgModel {
+            width: clamp(47rem, 39.615rem + 7.212vw, 50rem);
+
+        }
+    }
+
+}
+
+@include tablet {
+    .landing_items {
+        flex-direction: column-reverse;
+        overflow: visible;
+        gap: 7rem;
+    }
+
+    .landing_info_container {
+        justify-content: flex-end;
+        height: auto;
+        align-items: center;
+
+        .landing_title {
+            font-size: clamp(6rem, 5.377rem + 1.462vw, 6.5rem);
+        }
+
+        .btnAdd {
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .options_container {
+            .options_items {
+                margin-top: 7rem;
+            }
+        }
+    }
+
+    .landing_model_container {
+        margin: 7rem 0 0 0;
+
+        .imgModel {
+            // transform: none;
+            width: clamp(32rem, 24.526rem + 17.544vw, 38rem);
+        }
+    }
+}
+
+@include movilL {
+    header {
+        display: none;
+    }
+
+    .landing_info_container {
+        .landing_title {
+            font-size: clamp(4.3rem, -0.881rem + 16.19vw, 6rem);
+        }
+
+        .landing_subtitle {
+            font-size: clamp(3.5rem, 1.976rem + 4.762vw, 4rem);
+        }
+
+        .options_container {
+            .options_items {
+                display: none;
+            }
+        }
+    }
+
+    .carousel_container {
+        display: block;
+
+        .carousel_items {
+            margin: 6rem 0 0;
+
+            .slider {
+                display: flex;
+                gap: 3rem;
+                align-items: center;
+
+                .card {}
+
+                .slider-nav {
+                    .btnNextCard {
+                        width: 2rem;
+                        height: 2rem;
+                        border-radius: 50%;
+                        border: 1px solid $negro;
+                        background-color: $blanco;
+
+                        &.activo {
+                            background-color: $negro;
+
+                        }
+
+                    }
+                }
+            }
+
+        }
+
+        .slider-nav {
+            display: flex;
+            column-gap: 1rem;
+            position: absolute;
+            bottom: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+
+            a {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background-color: $negro;
+                opacity: 0.75;
+                transition: opacity ease 250ms;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .landing_model_container {
+        .imgModel {
+            width: clamp(28rem, 15.81rem + 38.095vw, 32rem);
+        }
+    }
+
+    @keyframes slideOutUpMobile {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        100% {
+            -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
+        }
+    }
+
+    .selectedMobile {
+        background-color: orange;
+        -webkit-animation-name: slideOutUpMobile;
+        animation-name: slideOutUpMobile;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+}
