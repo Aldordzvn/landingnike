@@ -2,6 +2,7 @@
 
 Proyecto dedicado a portafolio personal. 
 Es una landing page con productos de Nike inspirado en un diseño de la plataforma de Figma, el diseño es 100% responsive para todos los dispositivo. Utilice Angular v19, HTML y SCSS.
+<br>
 DEMO: https://landingnike.web.app/
 -------------------------------------------
 ## Tecnologías
